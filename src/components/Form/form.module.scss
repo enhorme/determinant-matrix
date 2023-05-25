@@ -1,0 +1,17 @@
+.form {
+  background-color: greenyellow;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3rem;
+
+  input {
+    display: inline-block;
+    max-width: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    min-width: 2rem;
+    min-height: 2rem;
+    margin: 1rem;
+    background-color: white;
+  }
+}

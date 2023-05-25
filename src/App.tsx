@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Select from './components/Select'
+import {createMatrix} from './utils/index'
+import MatrixForm from './components/Form/index'
+import {useAppSelector} from './redux/hooks'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const matrixSize = useAppSelector(state => state.matrix.matrixSize)
+
+    return (
+        <div>
+            <Select/>
+            <MatrixForm matrix={createMatrix(matrixSize)}></MatrixForm>
+        </div>
+    )
 }
 
-export default App;
+export default App
